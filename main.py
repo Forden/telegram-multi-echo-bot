@@ -11,7 +11,7 @@ dp = Dispatcher(bot=bot)
 
 @dp.message_handler()
 async def echo(msg: types.Message):
-    txt = msg.html_text + f'\nsent from @{(await bot.me).username}'
+    txt = msg.html_text + f'\nsent from @{(await bot.get_me()).username}'
     await bot.send_message(msg.from_user.id, txt)
 
 
